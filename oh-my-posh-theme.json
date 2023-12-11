@@ -8,7 +8,6 @@
                 {
                     "background": "#254CF8",
                     "foreground": "#FCDCF8",
-                    // "leading_diamond": "\u256d\u2500\ue0b2",
                     "leading_diamond": "\u256d\u2500",
                     "trailing_diamond": "\ue0b0",
                     "properties": {
@@ -42,12 +41,12 @@
                 {
                     "background": "#B84A0A",
                     "foreground": "#FFFFFF",
+                    "powerline_symbol": "\ue0b0",
                     "properties": {
                         "style": "folder"
                     },
                     "style": "powerline",
-                    "powerline_symbol": "\ue0b0",
-                    "template": " \udb81\udf70 {{ .Path }} ",
+                    "template": " \ue5fe {{ .Path }} ",
                     "type": "path"
                 },
                 {
@@ -71,18 +70,6 @@
                     "trailing_diamond": "\ue0b4",
                     "type": "git"
                 },
-                // {
-                //     "background": "#54EEF3",
-                //     "foreground": "#1B0D57",
-                //     "background_templates": ["{{ if gt .Code 0 }}#f00{{ end }}"],
-                //     "powerline_symbol": "\ue0b0",
-                //     "properties": {
-                //         "always_enabled": true
-                //     },
-                //     "style": "powerline",
-                //     "template": " {{ if gt .Code 0 }}\uf421 \uf119{{ else }}\uf469 \u2665{{ end }} ",
-                //     "type": "status"
-                // }
                 {
                     "background": "#0f0",
                     "foreground": "#474358",
@@ -124,12 +111,6 @@
                     "foreground": "#81ff91",
                     "template": "<#cc7eda> \u007C </><#7eb8da>\ue73d</> {{ .Full }}"
                 },
-                // {
-                //     "type": "npm",
-                //     "style": "powerline",
-                //     "foreground": "#81ff91",
-                //     "template": "<#cc7eda> \u007C </><#7eb8da>npm:</> {{ .Full }}"
-                // },
                 {
                     "type": "sysinfo",
                     "style": "powerline",

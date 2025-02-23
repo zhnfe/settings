@@ -9,7 +9,6 @@
                     "properties": {
                         "alpine": "\uf300",
                         "arch": "\uf303",
-                        "cache_duration": "none",
                         "centos": "\uf304",
                         "debian": "\uf306",
                         "elementary": "\uf309",
@@ -33,9 +32,6 @@
                     "style": "diamond"
                 },
                 {
-                    "properties": {
-                        "cache_duration": "none"
-                    },
                     "template": " \uf489 {{ .Name }} ",
                     "foreground": "#512a53",
                     "background": "#c7f66f",
@@ -44,7 +40,6 @@
                 },
                 {
                     "properties": {
-                        "cache_duration": "none",
                         "home_icon": "~",
                         "style": "short"
                     },
@@ -58,7 +53,6 @@
                 {
                     "properties": {
                         "branch_max_length": 25,
-                        "cache_duration": "none",
                         "fetch_stash_count": true,
                         "fetch_status": true,
                         "fetch_upstream_icon": true
@@ -79,8 +73,7 @@
                 },
                 {
                     "properties": {
-                        "always_enabled": true,
-                        "cache_duration": "none"
+                        "always_enabled": true
                     },
                     "trailing_diamond": "\ue0c6",
                     "template": " {{ if .Error }}\uf421 \uf119 {{ else }}\uf469 ♥ {{ end }} ",
@@ -101,7 +94,6 @@
             "segments": [
                 {
                     "properties": {
-                        "cache_duration": "none",
                         "command": "node -v | str replace 'v' ''",
                         "shell": "nu"
                     },
@@ -111,9 +103,6 @@
                     "style": "plain"
                 },
                 {
-                    "properties": {
-                        "cache_duration": "none"
-                    },
                     "template": "<#0055ff>\udb80\udf5b</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB",
                     "foreground": "#0055ff",
                     "type": "sysinfo",
@@ -126,9 +115,6 @@
             "alignment": "left",
             "segments": [
                 {
-                    "properties": {
-                        "cache_duration": "none"
-                    },
                     "template": "\u2570\u2500",
                     "foreground": "#254CF8",
                     "type": "text",
@@ -144,7 +130,6 @@
                 {
                     "properties": {
                         "always_enabled": false,
-                        "cache_duration": "none",
                         "style": "austin",
                         "threshold": 150
                     },
@@ -155,7 +140,6 @@
                 },
                 {
                     "properties": {
-                        "cache_duration": "none",
                         "command": "(date now | format date '%m\u6708%d\u65e5 %T') + ' \u5468' +  (['\u65e5' '\u4e00' '\u4e8c' '\u4e09' '\u56db' '\u4e94' '\u516d'] | get (date now | format date '%w' | into int))",
                         "shell": "nu"
                     },

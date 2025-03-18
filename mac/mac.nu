@@ -7,16 +7,11 @@ $env.PATH = (
     | append '/usr/bin'
     | append '/usr/sbin'
 )
-$env.config.buffer_editor = "code"
-$env.config.show_banner = false
+
 # oh my posh
 source ~/.oh-my-posh.nu
+source ../common.nu
 
-# 别名
-alias s = npm run serve
-alias d = npm run dev
-alias ll = ls -l
-alias la = ls -a
 # 环境变量
 $env.LS_COLORS = "di=01;96:ln=00;95:*.js=00;32:*.ts=00;32"
 $env.HOMEBREW_API_DOMAIN = 'https://mirrors.ustc.edu.cn/homebrew-bottles/api'
@@ -34,16 +29,15 @@ def hnpush [branch] {
         _ => {git push origin $'HEAD:refs/for/ocp-fe_1-0-($branch)_BRANCH'}
     }
 }
-alias hnpull = git pull --rebase --autostash
 
-def --env proxy [port = 7890 --cancel(-c)] {
-  if $cancel {
-    $env.HTTP_PROXY = ''
-    $env.HTTPS_PROXY = ''
-    $env.All_PROXY = ''
-    return
-  }
-  $env.HTTP_PROXY = $'http://127.0.0.1:($port)'
-  $env.HTTPS_PROXY = $'http://127.0.0.1:($port)'
-  $env.All_PROXY = $'socks5://127.0.0.1:($port)'
+def fcnap-push [token = 'local'] {
+    $env.UPLOADER_ENVIRONMENT_TOKEN = match $token {
+        'local' => '7aadac5e52'
+        'tpl' => 'e17fe93a30'
+        'guohui' => '87e60e9fad'
+        _ => ''
+    }
+    cd ~/Documents/code/baidu/ps-se-fe-tpl/ocp-fe
+    pnpm build:dev
+    f-upload ./dist
 }

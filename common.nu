@@ -28,3 +28,9 @@ def --env proxy [port = 7890 --cancel(-c)] {
     $env.HTTPS_PROXY = $'http://127.0.0.1:($port)'
     $env.All_PROXY = $'socks5://127.0.0.1:($port)'
 }
+
+def deploy-zhnme [] {
+    pnpm build --envName zhnme
+    tar -zcf output.tar.gz .output
+    scp ./output.tar.gz ubuntu@2406:da18:495:d609:b1af:d2f2:8dd4:2447:/home/ubuntu/zhnme/
+}

@@ -5,13 +5,13 @@
             "alignment": "left",
             "segments": [
                 {
-                    "foreground": "#000",
+                    "foreground": "#999",
                     "type": "os",
                     "template": "{{ .Icon }} ",
                     "style": "plain"
                 },
                 {
-                    "foreground": "#000",
+                    "foreground": "#999",
                     "style": "plain",
                     "template": "{{ .UserName }}",
                     "type": "session"

@@ -1,12 +1,28 @@
-$env.config.buffer_editor = 'code'
-$env.config.show_banner = false
-
+$env.config = {
+    buffer_editor: 'code'
+    show_banner: false
+    keybindings:  [
+        {
+            name: complete_word
+            modifier: control
+            keycode: char_f
+            mode: emacs
+            event: {
+                send: HistoryHintWordComplete
+            }
+        }
+    ]
+}
 # 别名
 alias s = npm run serve
 alias d = npm run dev
 alias p = npm run preview
 alias ll = ls -l
 alias la = ls -a
+
+# git
+alias amend = git commit --amend
+alias commit = git commit -m 
 
 def hnpull [branch: string = ''] {
     if $branch == '' {
@@ -34,3 +50,4 @@ def deploy-zhnme [] {
     tar -zcf output.tar.gz .output
     scp ./output.tar.gz ubuntu@[2406:da18:495:d609:b1af:d2f2:8dd4:2447]:/home/ubuntu/zhnme/
 }
+    

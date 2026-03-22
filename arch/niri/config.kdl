@@ -1,3 +1,4 @@
+// ln -s ~/Documents/code/github/zhnfe/settings/arch/niri/config.kdl  ~/.config/niri/config.kdl
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
@@ -354,6 +355,7 @@ window-rule {
 window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
+    draw-border-with-background false
 }
 
 overview {
@@ -365,6 +367,9 @@ binds {
     Ctrl+Shift+v    { spawn-sh "dms ipc clipboard toggle"; }
     Alt+Space       { spawn-sh "dms ipc launcher toggle"; }
     Mod+E           { spawn "thunar"; }
+    Mod+Ctrl+A hotkey-overlay-title="向左移动窗口 Move window to left between columes" { consume-or-expel-window-left; }
+    Mod+Ctrl+D hotkey-overlay-title="向右移动窗口 Move window to right between columes" { consume-or-expel-window-right; }
+    Mod+F8          { spawn-sh "dms ipc lock lock,"; }
 
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program

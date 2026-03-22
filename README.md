@@ -1,2 +1,2 @@
 # settings
-personal settings about os and software
+os and software

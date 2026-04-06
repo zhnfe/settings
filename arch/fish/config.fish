@@ -4,7 +4,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-fastfetch | lolcat
+fastfetch
 
 alias s='npm run serve'
 alias d='npm run dev'
